@@ -23,8 +23,8 @@ const countDown = () => {
 };
 
 //Creating the count down from the current time
-let now = new Date();
-let timeSpan = eventDay - now;
+let today = new Date();
+let timeSpan = eventDay - today;
 
 //if-elseif statement to check if the date has passed
 if (timeSpan <= -today) {
@@ -33,12 +33,12 @@ if (timeSpan <= -today) {
 } else if (timeSpan <= 0) {
   console.log("Today is Izz's Birthday!");
   clearInterval(interval);
-  return;
+  //return;
 } else {
-  const days = Math.floor(timeSpan / days);
-  const hours = Math.floor((timeSpan % hours) / hour);
-  const minutes = Math.floor((timeSpan % minutes) / minute);
-  const seconds = Math.floor((timeSpan % seconds) / second);
+  const days = Math.floor(timeSpan / day);
+  const hours = Math.floor((timeSpan % hour) / hour);
+  const minutes = Math.floor((timeSpan % minute) / minute);
+  const seconds = Math.floor((timeSpan % second) / second);
 
   dayField.innerHTML = days;
   hourField.innerHTML = hours;
@@ -48,4 +48,4 @@ if (timeSpan <= -today) {
   console.log(days + ":" + hours + ":" + minutes + ":" + seconds);
 }
 
-//interval = setInterval(countDown, second);
+interval = setInterval(countDown, second);
